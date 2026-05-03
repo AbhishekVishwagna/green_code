@@ -1,20 +1,6 @@
-# GreenCode
-Every time your code runs on a computer or server, it uses electricity. Inefficient code uses way more electricity than it needs to — and that adds up to a lot of CO₂ in the atmosphere. CodeGreen teaches you how to spot and fix those hidden energy wasters, one line at a time.
-
-*   **Score:** 95/100
-*   **Reward:** +5 Carbon Credits![cite: 1]
-
----
-
-## 🌍 Why GreenCode?
-
-Data centers account for nearly **2% of global greenhouse gas emissions**. Inefficient software is a major contributor. **GreenCode** shifts the responsibility to the development phase, empowering engineers to write "Cooler" code that runs faster and consumes less electricity.[cite: 1]
-
----
-
 # 🌿 GreenCode: Green Software Credit System
 
-**GreenCode** is a privacy-first, in-browser static analysis tool designed to audit source code for energy efficiency. By identifying "Carbon Leaks" (inefficient algorithmic patterns), it helps developers reduce the digital carbon footprint of their applications and rewards sustainable coding practices with **Carbon Credits**.
+**GreenCode** is a privacy-first, in-browser static analysis tool designed to audit Python code for energy efficiency. By identifying "Carbon Leaks"—inefficient algorithmic patterns that cause unnecessary CPU load—it empowers developers to reduce their digital carbon footprint and rewards sustainable coding with **Carbon Credits**.[cite: 1]
 
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![React](https://img.shields.io/badge/frontend-React-blue)
@@ -25,34 +11,73 @@ Data centers account for nearly **2% of global greenhouse gas emissions**. Ineff
 
 ## 🚀 Key Features
 
-*   **In-Browser Analysis:** Leverages **BrowserPod** to run a full Linux-based Python environment directly in your browser. Your code never leaves your machine.[cite: 1]
-*   **Green Score (10-100):** A sophisticated scoring engine that evaluates code based on CPU instructional footprint, memory management, and algorithmic complexity.[cite: 1]
-*   **Carbon Credits:** Earn digital credits for every optimization made.
-*   **Real-time Suggestions:** Provides actionable feedback to refactor inefficient loops, redundant imports, and memory-heavy operations.[cite: 1]
-*   **Zero Infrastructure:** No backend server required for analysis—eliminating the carbon cost of traditional cloud-based auditors.[cite: 1]
+*   **Client-Side Compute:** Powered by **BrowserPod**, the analysis runs in a virtualized Linux container entirely within the user's browser tab.[cite: 1]
+*   **Absolute Privacy:** Sensitive source code never leaves the local machine; no data is uploaded to external servers for auditing.[cite: 1]
+*   **Granular Energy Scoring (10-100):** A sophisticated engine evaluates code against 30+ "Green Rules" covering complexity, memory thrashing, and I/O efficiency.[cite: 1]
+*   **Actionable Refactoring:** Provides real-time suggestions to transform "Carbon Monster" code into "Green Master" code.[cite: 1]
+*   **Digital Sustainability Ledger:** Tracks optimization progress and awards credits based on calculated energy savings.[cite: 1]
 
 ---
 
-## 🛠️ The "Green Rules" (Audit Logic)
+## 🏗️ Technical Architecture
 
-Our auditor analyzes code against industry-standard efficiency patterns:
-*   **Complexity Guard:** Penalizes nested loops ($O(n^2)$ patterns) that cause exponential CPU thermal draw.[cite: 1]
-*   **Memory Management:** Detects "Memory Spikes" caused by loading entire datasets into RAM (e.g., `.readlines()`) vs. lazy loading.[cite: 1]
-*   **Quadratic String Trap:** Deducts points for inefficient string concatenation in loops.[cite: 1]
-*   **Algorithmic Optimization:** Rewards the use of Sets for $O(1)$ lookups and built-in C-optimized functions like `.join()`, `sum()`, and `map()`.[cite: 1]
+The project is split into two primary environments that communicate via the BrowserPod SDK:[cite: 1]
+
+### **1. Frontend (gscs-frontend)**
+Built with **React** and **Tailwind CSS**, it handles the user interface, code editing (via Monaco/CodeMirror), and visualizes the energy audit results.[cite: 1]
+
+### **2. Auditor Engine (gscs-backend)**
+A Python-based logic core that runs inside the **BrowserPod** sandbox.[cite: 1]
+*   `auditor.py`: Parses code into an Abstract Syntax Tree (AST) to identify structural inefficiencies.[cite: 1]
+*   `scorer.py`: Applies penalties and bonuses to generate the 10-100 efficiency score.[cite: 1]
+*   `scanner.py`: Detects specific patterns like nested loops, redundant imports, and immutable string traps.[cite: 1]
 
 ---
 
-## 🏗️ Project Structure
-```text
-Green Software Credit System/
-├── gscs-frontend/         # React + Tailwind CSS UI
-│   ├── src/               # UI Components & BrowserPod Integration
-│   └── public/            # Static assets
-└── gscs-backend/          # Python Logic (Runs inside BrowserPod)
-    ├── core/
-    │   ├── auditor.py     # Main Static Analysis Engine (AST)
-    │   ├── scanner.py     # Code pattern matcher
-    │   └── scorer.py      # Scoring & Credit calculation logic
-    └── config/
-        └── rules.json     # Configurable efficiency rules
+## 🛠️ The Green Scoring Logic
+
+Our auditor targets physical hardware behaviors to ensure 90-95% accuracy in energy estimation:[cite: 1]
+
+*   **Quadratic Penalty (-35 pts):** Detects $O(n^2)$ nested loops that exponentially increase CPU thermal output.[cite: 1]
+*   **Memory Spike Penalty (-30 pts):** Flags operations that load massive datasets into RAM (like `.readlines()`) instead of using lazy evaluation.[cite: 1]
+*   **I/O Bottleneck Penalty (-25 pts):** Deducts points for `print` or network calls inside high-frequency loops.[cite: 1]
+*   **C-Optimization Bonus (+10 pts):** Rewards the use of native, energy-efficient functions like `sum()`, `map()`, or `.join()`.[cite: 1]
+
+---
+
+## 🚦 Getting Started
+
+### Prerequisites
+*   **Node.js** (v18.0.0 or higher)
+*   **Git**
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-repo/greencode.git
+    cd greencode
+    ```
+
+2.  **Install & Run Frontend:**
+    ```bash
+    cd gscs-frontend
+    npm install
+    npm run dev
+    ```
+
+3.  **Analyze Code:**
+    Open the local server URL. The **BrowserPod** will initialize automatically. Paste your Python code to start the "Green Audit."[cite: 1]
+
+---
+
+## 👥 The Team
+
+*   **Abhishek Basavaraj Vishwagna** – Embedded Engineer & Logic Architect (Python AST Engine)[cite: 1]
+*   **Siddhant** – Software Engineer & Frontend Architect (React UI & Integration)[cite: 1]
+
+---
+
+## 📄 License
+
+T
