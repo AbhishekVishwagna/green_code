@@ -1,0 +1,22 @@
+.darkveil-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.darkveil-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.darkveil-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(0, 232, 135, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(6, 14, 6, 0.18), hsl(120 33% 4% / 0.82));
+}

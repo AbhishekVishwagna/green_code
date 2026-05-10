@@ -1,0 +1,10 @@
+# requirements.txt — Python dependencies for GSCS core engine
+# No external packages needed for the core — uses stdlib only.
+# Optional: add these for extended features
+
+# Testing
+pytest>=7.0
+pytest-cov>=4.0
+
+# Linting (dev only)
+ruff>=0.1.0

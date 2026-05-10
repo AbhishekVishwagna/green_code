@@ -1,0 +1,23 @@
+{
+  "name": "gscs-api",
+  "version": "1.0.0",
+  "description": "Green Software Credit System — API server",
+  "main": "api/server.js",
+  "scripts": {
+    "start":   "node api/server.js",
+    "dev":     "nodemon api/server.js",
+    "scan":    "python3 cli/gscs.py scan",
+    "scan:ci": "python3 cli/gscs.py scan ./src --fail-below 70 --output ./output/reports"
+  },
+  "dependencies": {
+    "cors":    "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "engines": {
+    "node":   ">=18.0.0",
+    "python": ">=3.11.0"
+  }
+}

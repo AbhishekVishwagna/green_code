@@ -1,0 +1,92 @@
+{
+  "rules": {
+    "nested_loop": {
+      "enabled": true,
+      "penalty": 20,
+      "impact": "High",
+      "co2_weight": 0.50,
+      "description": "O(n²) nested loops — major CPU waste"
+    },
+    "triple_nested_loop": {
+      "enabled": true,
+      "penalty": 35,
+      "impact": "High",
+      "co2_weight": 1.00,
+      "description": "O(n³) triple-nested loops — critical"
+    },
+    "unused_variable": {
+      "enabled": true,
+      "penalty": 5,
+      "impact": "Low",
+      "co2_weight": 0.05,
+      "description": "Memory allocated but never read"
+    },
+    "unused_import": {
+      "enabled": true,
+      "penalty": 8,
+      "impact": "Medium",
+      "co2_weight": 0.10,
+      "description": "Import overhead on every module load"
+    },
+    "heavy_import": {
+      "enabled": true,
+      "penalty": 10,
+      "impact": "Medium",
+      "co2_weight": 0.20,
+      "description": "Large library import — prefer selective imports"
+    },
+    "list_membership": {
+      "enabled": true,
+      "penalty": 12,
+      "impact": "Medium",
+      "co2_weight": 0.15,
+      "description": "O(n) list lookup — use a set for O(1)"
+    },
+    "dead_function": {
+      "enabled": true,
+      "penalty": 5,
+      "impact": "Low",
+      "co2_weight": 0.05,
+      "description": "Unreachable code still parsed and compiled"
+    },
+    "repeated_call": {
+      "enabled": true,
+      "penalty": 15,
+      "impact": "Medium",
+      "co2_weight": 0.20,
+      "description": "Redundant function calls inside a loop"
+    },
+    "string_concat_loop": {
+      "enabled": true,
+      "penalty": 18,
+      "impact": "High",
+      "co2_weight": 0.30,
+      "description": "String += in loop creates O(n²) allocations"
+    },
+    "global_in_loop": {
+      "enabled": false,
+      "penalty": 7,
+      "impact": "Low",
+      "co2_weight": 0.08,
+      "description": "LOAD_GLOBAL is slower than LOAD_FAST in loops"
+    }
+  },
+  "emission_model": {
+    "grid_intensity_g_per_kwh": 490,
+    "server_cpu_watts": 15,
+    "daily_executions": 10000,
+    "note": "IEA 2023 global average grid intensity"
+  },
+  "grade_thresholds": {
+    "A": { "min": 90, "credits": 10 },
+    "B": { "min": 70, "credits": 5  },
+    "C": { "min": 50, "credits": 2  },
+    "D": { "min": 0,  "credits": 0  }
+  },
+  "certification_thresholds": {
+    "Platinum": 90,
+    "Gold":     75,
+    "Silver":   60,
+    "Bronze":   40
+  }
+}
