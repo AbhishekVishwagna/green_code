@@ -1,4 +1,6 @@
 {
+  "buildCommand": "echo 'Frontend only'",
+  "outputDirectory": ".",
   "functions": {
     "disabled": true
   }
