@@ -68,7 +68,7 @@ Our auditor targets physical hardware behaviors to ensure 90-95% accuracy in ene
 2.  **Configure Environment Variables:**
     Create a `.env` file in the `gscs-frontend` directory and add your API key:
     ```text
-    VITE_BROWSERPOD_API_KEY=your_api_key_here
+    VITE_BP_APIKEY=your_api_key_here
     ```
 
 3.  **Frontend Provisioning:**

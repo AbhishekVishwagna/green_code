@@ -5,7 +5,16 @@
  */
 import { BrowserPod } from "@leaningtech/browserpod";
 
-const BP_API_KEY = import.meta.env.VITE_BP_APIKEY as string;
+const BP_API_KEY = (
+  import.meta.env.VITE_BP_APIKEY ||
+  import.meta.env.VITE_BROWSERPOD_API_KEY ||
+  ""
+).trim();
+const BP_API_KEY_SOURCE = import.meta.env.VITE_BP_APIKEY
+  ? "VITE_BP_APIKEY"
+  : import.meta.env.VITE_BROWSERPOD_API_KEY
+    ? "VITE_BROWSERPOD_API_KEY"
+    : null;
 
 export type PodState = "idle" | "booting" | "ready" | "error";
 let _state:     PodState      = "idle";
@@ -80,11 +89,21 @@ async function copyFile(pod: InstanceType<typeof BrowserPod>, path: string) {
 // ── Boot — follows docs src/main.js pattern exactly ──────────────────────────
 async function _boot(termEl: HTMLElement): Promise<PodService> {
   if (!BP_API_KEY) {
-    throw new Error("VITE_BP_APIKEY not set — add to .env.local and restart.");
+    throw new Error("BrowserPod API key not set. Add VITE_BP_APIKEY to .env.local and restart Vite.");
   }
 
   // 1. Boot the pod
-  const pod = await BrowserPod.boot({ apiKey: BP_API_KEY });
+  let pod: InstanceType<typeof BrowserPod>;
+  try {
+    pod = await BrowserPod.boot({ apiKey: BP_API_KEY });
+  } catch (err) {
+    const detail = err instanceof Error ? err.message : String(err);
+    throw new Error(
+      `BrowserPod connection failed using ${BP_API_KEY_SOURCE ?? "configured key"}. ` +
+      `Restart Vite after changing .env.local, then verify the key in BrowserPod. ` +
+      `Provider error: ${detail}`
+    );
+  }
 
   // 2. Create terminal (output streams into the UI element)
   const terminal = await pod.createDefaultTerminal(termEl);
