@@ -54,7 +54,7 @@ export default function Dashboard() {
 
   return (
     <PageWrapper>
-      <div className="max-w-6xl mx-auto px-6 py-10 space-y-8">
+      <div className="max-w-6xl mx-auto px-4 py-8 space-y-8 sm:px-6 sm:py-10">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -127,7 +127,7 @@ export default function Dashboard() {
               style={{ borderColor: "hsl(120 33% 16%)", backgroundColor: "hsl(120 33% 5%)" }}
             >
               <h3 className="font-mono text-xs uppercase tracking-wider text-muted-foreground mb-4">{section.title}</h3>
-              <table className="w-full">
+              <div className="overflow-x-auto"><table className="w-full">
                 <thead>
                   <tr className="border-b" style={{ borderColor: "hsl(120 33% 12%)" }}>
                     <th className="text-left font-mono text-xs text-muted-foreground py-2">File</th>
@@ -144,7 +144,7 @@ export default function Dashboard() {
                     </tr>
                   ))}
                 </tbody>
-              </table>
+              </table></div>
             </motion.div>
           ))}
         </div>

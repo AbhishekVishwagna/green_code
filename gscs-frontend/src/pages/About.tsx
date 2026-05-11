@@ -39,7 +39,7 @@ const mission = [
 
 function AboutCardStack() {
   return (
-    <div className="relative min-h-[430px]">
+    <div className="relative hidden min-h-[430px] lg:block">
       <CardSwap width={360} height={240} cardDistance={42} verticalDistance={50} delay={3300} pauseOnHover skewAmount={5}>
         <Card className="p-6">
           <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-md bg-primary/10 text-primary">
@@ -81,14 +81,14 @@ export default function About() {
     <PageWrapper>
       <motion.div className="fixed left-0 right-0 top-14 z-40 h-px origin-left bg-primary" style={{ scaleX }} />
 
-      <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
         <section className="grid items-center gap-10 py-10 lg:grid-cols-[0.95fr_1.05fr]">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
               <Leaf className="h-3.5 w-3.5" />
               About Green Code
             </div>
-            <h1 className="mb-5 font-mono text-5xl font-bold leading-tight text-foreground md:text-6xl">
+            <h1 className="mb-5 font-mono text-3xl font-bold leading-tight text-foreground sm:text-5xl md:text-6xl">
               Sustainable software should feel measurable.
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-muted-foreground">

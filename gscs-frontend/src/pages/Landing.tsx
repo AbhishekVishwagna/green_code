@@ -99,7 +99,7 @@ function CarbonCounter() {
 
   return (
     <div className="flex flex-wrap items-baseline gap-2">
-      <span ref={ref} className="font-mono text-5xl font-bold text-primary">
+      <span ref={ref} className="font-mono text-4xl font-bold text-primary sm:text-5xl">
         14283.0
       </span>
       <span className="font-mono text-sm text-muted-foreground">kg CO2 saved</span>
@@ -118,7 +118,7 @@ export default function Landing() {
         </Suspense>
         <div className="hero-vignette absolute inset-0" />
 
-        <div className="relative z-10 mx-auto grid min-h-[calc(100vh-3.5rem)] max-w-6xl items-center gap-8 px-6 pb-24 pt-20 lg:grid-cols-[0.92fr_1.08fr]">
+        <div className="relative z-10 mx-auto grid min-h-[calc(100vh-3.5rem)] max-w-6xl items-center gap-8 px-4 pb-16 pt-16 sm:px-6 sm:pb-24 sm:pt-20 lg:grid-cols-[0.92fr_1.08fr]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -130,12 +130,12 @@ export default function Landing() {
               Live carbon-aware auditing
             </div>
 
-            <h1 className="mb-5 font-mono text-5xl font-bold leading-tight text-foreground md:text-7xl">
+            <h1 className="mb-5 font-mono text-3xl font-bold leading-tight text-foreground sm:text-5xl md:text-7xl">
               Code greener.
               <span className="block text-primary">Ship cleaner.</span>
             </h1>
 
-            <p className="mb-8 max-w-xl text-lg leading-8 text-muted-foreground">
+            <p className="mb-8 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
               Audit your Python code for computational inefficiencies that cause unnecessary carbon emissions. Score,
               certify, and improve.
             </p>
@@ -156,7 +156,7 @@ export default function Landing() {
             >
               <Link
                 to="/audit"
-                className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3 font-mono text-sm font-semibold text-primary-foreground shadow-[0_0_28px_rgba(0,232,135,0.25)] transition hover:-translate-y-0.5 hover:shadow-[0_0_36px_rgba(0,232,135,0.42)] press-effect"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3 font-mono text-sm font-semibold text-primary-foreground shadow-[0_0_28px_rgba(0,232,135,0.25)] transition hover:-translate-y-0.5 hover:shadow-[0_0_36px_rgba(0,232,135,0.42)] press-effect sm:w-auto sm:justify-start"
               >
                 Audit Your Code
                 <span aria-hidden="true">-&gt;</span>
@@ -168,7 +168,7 @@ export default function Landing() {
         </div>
       </section>
 
-      <section className="relative z-20 -mt-10 mx-auto max-w-5xl px-6 py-20">
+      <section className="relative z-20 -mt-10 mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-20">
         <div className="grid gap-6 md:grid-cols-3">
           {features.map(({ Icon, ...f }, i) => (
             <motion.div

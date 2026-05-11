@@ -112,10 +112,10 @@ export default function Audit() {
 
   return (
     <PageWrapper>
-      <div className="h-[calc(100vh-3.5rem)] flex flex-col md:flex-row">
+      <div className="flex flex-col md:h-[calc(100vh-3.5rem)] md:flex-row">
 
         {/* Editor */}
-        <div className="flex-1 flex flex-col border-r" style={{ borderColor: "hsl(120 33% 12%)" }}>
+        <div className="flex flex-col border-b md:flex-1 md:border-b-0 md:border-r" style={{ borderColor: "hsl(120 33% 12%)" }}>
           <div
             className="flex items-center justify-between px-4 py-3 border-b"
             style={{ borderColor: "hsl(120 33% 12%)", backgroundColor: "hsl(120 33% 4%)" }}
@@ -129,7 +129,7 @@ export default function Audit() {
               {loading ? "Scanning..." : "Run Audit ▶"}
             </button>
           </div>
-          <div className="flex-1">
+          <div className="h-[50vh] md:flex-1">
             <Editor
               height="100%"
               defaultLanguage="python"
@@ -149,7 +149,7 @@ export default function Audit() {
         </div>
 
         {/* Results */}
-        <div className="flex-1 overflow-y-auto" style={{ backgroundColor: "hsl(120 33% 3%)" }}>
+        <div className="overflow-y-auto md:flex-1" style={{ backgroundColor: "hsl(120 33% 3%)" }}>
           {loading && <ScanningAnimation />}
 
           {!loading && !result && (
@@ -163,7 +163,7 @@ export default function Audit() {
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="p-6 space-y-6">
 
               {/* Score + Grade */}
-              <div className="flex items-center gap-8">
+              <div className="flex flex-wrap items-center gap-6">
                 <ScoreDial score={result.score} />
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
@@ -252,7 +252,7 @@ export default function Audit() {
                     <span className="font-mono text-xs px-2 py-0.5 rounded-full border" style={{ borderColor: "hsl(120 33% 20%)", color: "hsl(120 33% 55%)" }}>via BrowserPod</span>
                   </div>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap items-center gap-3">
                   <div className="flex items-center gap-3 rounded border px-4 py-2" style={{ borderColor: "hsl(120 33% 16%)" }}>
                     <span className="font-mono text-xs text-muted-foreground">Green Code</span>
                     <GradeBadge grade={result.grade} size="sm" />
