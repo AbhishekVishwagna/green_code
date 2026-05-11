@@ -2,6 +2,8 @@
 
 **GreenCode** is a  static analysis tool designed to audit Python code for energy efficiency. By identifying "Carbon Footprint" of the code snippet. The inefficient algorithmic patterns that cause unnecessary CPU load empowers developers to reduce their digital carbon footprint and rewards sustainable coding with **Carbon Credits** and a digital **Greencode Certificate**.
 
+🌐 **Live Demo:** [green-code-app.vercel.app](https://green-code-app.vercel.app)
+
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![React](https://img.shields.io/badge/frontend-React-blue)
 ![Python](https://img.shields.io/badge/engine-Python-yellow)
