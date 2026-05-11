@@ -1,4 +1,7 @@
 {
+  "functions": {
+    "disabled": true
+  },
   "buildCommand": "cd gscs-frontend && npm install && npm run build",
   "outputDirectory": "gscs-frontend/dist",
   "installCommand": "echo 'install handled in build'",
